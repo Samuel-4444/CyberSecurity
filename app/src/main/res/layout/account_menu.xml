@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -43,7 +44,8 @@
         android:layout_marginBottom="10dp"
         android:width="200dp"
         android:onClick="RegisterButtonPressed"
-        android:text="@string/register" />
+        android:text="@string/register"
+        tools:ignore="UsingOnClickInXml" />
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
@@ -57,6 +59,7 @@
         android:layout_marginBottom="10dp"
         android:width="200dp"
         android:onClick="GuestButtonPressed"
-        android:text="@string/guest" />
+        android:text="@string/guest"
+        tools:ignore="UsingOnClickInXml" />
 
 </RelativeLayout>
