@@ -17,7 +17,7 @@
         android:text="@string/login" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/textUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -30,13 +30,14 @@
         android:drawableStart="@drawable/baseline_email_24"
         android:drawablePadding="10dp"
         android:importantForAutofill="no"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTextEmailAddress"
+        android:layout_below="@id/textUserName"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
@@ -47,30 +48,35 @@
         android:hint="@string/password"
         android:importantForAutofill="no"
         android:inputType="textPassword"
-        android:padding="20dp" />
+        android:padding="20dp"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <TextView
+        android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="30dp"
-        android:layout_below="@id/editTextTextPassword"
+        android:layout_below="@id/textPassword"
         android:text="@string/forgot_password"
         tools:ignore="RtlSymmetry" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_button"
+    <Button
+        android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTextPassword"
+        android:layout_below="@id/textPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:width="200dp"
-        android:text="@string/login" />
+        android:onClick="LoginButtonPressed"
+        android:text="@string/login"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
+        android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_button"
+        android:layout_below="@id/buttonLogin"
         android:layout_centerHorizontal="true"
         android:width="200dp"
         android:onClick="BackButtonPressed"
