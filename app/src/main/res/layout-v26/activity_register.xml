@@ -5,7 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:onClick="BackButtonPressed"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    tools:ignore="UsingOnClickInXml">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/background"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/background" />
 
     <TextView
         android:id="@+id/titleText"
@@ -14,11 +23,14 @@
         android:layout_margin="50dp"
         android:gravity="center"
         android:text="@string/register"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold" />
 
     <EditText
+        android:alpha="0.3"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/textview_ek1_shape"
         android:id="@+id/textUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +53,9 @@
         tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
+        android:alpha="0.3"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/textview_ek1_shape"
         android:id="@+id/textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,6 +74,9 @@
         tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
+        android:alpha="0.3"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/textview_ek1_shape"
         android:id="@+id/textConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,7 +127,8 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"
-        android:drawableTop="@drawable/baseline_help_24"
-        android:onClick="HelpButtonPressed" />
+        android:drawableTop="@drawable/baseline_help_24_white"
+        android:onClick="HelpButtonPressed"
+        tools:ignore="UsingOnClickInXml" />
 
 </RelativeLayout>

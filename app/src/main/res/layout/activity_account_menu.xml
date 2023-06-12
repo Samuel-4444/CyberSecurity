@@ -19,11 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:text="@string/cybersecurity_app"
+        android:text="@string/cyberguru"
         android:textColor="@color/white"
         android:textSize="45sp"
         android:textStyle="bold" />
@@ -40,15 +40,17 @@
         android:layout_marginBottom="10dp"
         android:width="300dp"
         android:height="50dp"
+        android:alpha="0.7"
+        android:background="@drawable/textview_ek1_shape"
         android:onClick="LoginButtonPressed"
         android:text="@string/login"
         android:textColorHighlight="#FFFFFF"
         android:textStyle="bold"
-        android:alpha="0.8"
         app:iconTint="#FFFFFF"
         tools:ignore="UsingOnClickInXml" />
 
     <Button
+        android:background="@drawable/textview_ek1_shape"
         android:id="@id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,6 +70,7 @@
         tools:ignore="UsingOnClickInXml" />
 
     <Button
+        android:background="@drawable/textview_ek1_shape"
         android:id="@+id/buttonGuest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
