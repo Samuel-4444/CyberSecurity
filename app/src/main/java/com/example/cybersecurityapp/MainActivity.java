@@ -24,4 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void GuestButtonPressed(View v){
     }
+
+    public void TestButtonPressed(View v){
+        Intent intent = new Intent(this, LearningViewActivity.class);
+        startActivity(intent);
+    }
 }
