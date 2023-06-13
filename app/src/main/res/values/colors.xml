@@ -15,4 +15,14 @@
     <color name="background_white">#FFFFFFFF</color>
 
 
+<!-- mainactivity_ colors -->
+
+        <color name="colorPrimary">#008577</color>
+        <color name="colorPrimaryDark">#00574B</color>
+        <color name="colorAccent">#D81B60</color>
+        <color name="_bg__mainactivity__ek2_color">#F6F6FF</color>
+        <color name="header_color">#FFFFFF</color>
+        <color name="cyberguru_color">#7A6BBC</color>
+        <color name="rectangle_2_color">#D9D9D9</color>
+
 </resources>
