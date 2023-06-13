@@ -1,0 +1,108 @@
+Index: app/src/main/res/layout/accessibility_setting.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <Switch\r\n        android:id=\"@+id/switch1\"\r\n        android:layout_width=\"320dp\"\r\n        android:layout_height=\"105dp\"\r\n        android:layout_marginStart=\"32dp\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:background=\"@color/purple_200\"\r\n        android:rotationY=\"0\"\r\n        android:text=\"Dark Mode\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"32dp\"\r\n        android:thumbTint=\"@color/light_grey\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.44\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.845\"\r\n\r\n        />\r\n\r\n    <SeekBar\r\n        android:id=\"@+id/seekBar\"\r\n        android:layout_width=\"218dp\"\r\n        android:layout_height=\"81dp\"\r\n\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.227\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.627\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/accessibility_setting.xml b/app/src/main/res/layout/accessibility_setting.xml
+--- a/app/src/main/res/layout/accessibility_setting.xml	(revision 9b9b5942eef5faccd028eb162a19b748624f203a)
++++ b/app/src/main/res/layout/accessibility_setting.xml	(date 1686580504638)
+@@ -26,16 +26,16 @@
+ 
+         />
+ 
+-    <SeekBar
+-        android:id="@+id/seekBar"
+-        android:layout_width="218dp"
+-        android:layout_height="81dp"
+-
++    <Button
++        android:id="@+id/button"
++        android:layout_width="130dp"
++        android:layout_height="69dp"
++        android:text="Button"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.227"
++        app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.627" />
++        app:layout_constraintVertical_bias="0.431" />
+ 
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/cybersecurityapp/TTS.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/cybersecurityapp/TTS.java b/app/src/main/java/com/example/cybersecurityapp/TTS.java
+new file mode 100644
+--- /dev/null	(date 1686663797943)
++++ b/app/src/main/java/com/example/cybersecurityapp/TTS.java	(date 1686663797943)
+@@ -0,0 +1,63 @@
++package com.example.cybersecurityapp;
++//
++//import android.speech.tts.TextToSpeech;
++//import androidx.appcompat.app.AppCompatActivity;
++//import java.util.Locale;
++//im
++//public class TTS extends AppCompatActivity implements TextToSpeech.OnInitListener {
++//
++//    TextToSpeech textToSpeech;
++//    @Override
++//    public void onInit(int status){
++//        if (status == TextToSpeech.SUCCESS){
++//            int result = textToSpeech.setLanguage(Locale.UK);
++//            String text = speakText.getText().toSring();
++//            textToSpeech.speak(text, TextToSpeech.QUEUE_FLUCH, null, null);
++//        }
++//    }
++//}
++
++import android.content.Context;
++import android.speech.tts.TextToSpeech;
++import android.widget.Toast;
++
++import java.util.Locale;
++
++public class TTS implements TextToSpeech.OnInitListener {
++
++    private TextToSpeech tts;
++    private boolean initialized;
++    private Context context;
++
++    public TTS(Context context) {
++        this.context = context;
++        tts = new TextToSpeech(context, this);
++    }
++
++    public void speak(String text) {
++        if (initialized) {
++            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
++        } else {
++            Toast.makeText(context, "Text-to-speech is not initialized yet.", Toast.LENGTH_SHORT).show();
++        }
++    }
++
++    public void shutdown() {
++        tts.shutdown();
++    }
++
++    @Override
++    public void onInit(int status) {
++        if (status == TextToSpeech.SUCCESS) {
++            int result = tts.setLanguage(Locale.getDefault());
++            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
++                Toast.makeText(context, "Language not supported.", Toast.LENGTH_SHORT).show();
++            } else {
++                initialized = true;
++            }
++        } else {
++            Toast.makeText(context, "Initialization failed.", Toast.LENGTH_SHORT).show();
++        }
++    }
++}
++
