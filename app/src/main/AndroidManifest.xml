@@ -13,6 +13,10 @@
         android:theme="@style/Theme.CyberSecurityApp"
         tools:targetApi="31">
         <activity
+            android:name=".MenuActivity"
+            android:exported="false"
+            android:label="@string/title_activity_menu" />
+        <activity
             android:name=".LearningViewActivity"
             android:exported="false" />
         <activity
