@@ -5,15 +5,18 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#CFCACA</color>
+    <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080</color>
     <color name="button_color">#1d00ad</color>
-
-
     <color name="light_grey">#FFCFCACA</color>
     <color name="background_white">#FFFFFFFF</color>
-
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="_bg__login_ek2_color">#FFFFFF</color>
+    <color name="titleshape_color">#0D2540</color>
+    <color name="textview_color">#2C599C</color>
 
 <!-- mainactivity_ colors -->
 
