@@ -71,7 +71,8 @@ public class TTS extends AppCompatActivity implements TextToSpeech.OnInitListene
             int startIndex = content.indexOf(highlightedText);
             int endIndex = startIndex + highlightedText.length();
 
-            spannableString.setSpan(new BackgroundColorSpan(0xFFFF00), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(new BackgroundColorSpan(0xFFFF00), startIndex, endIndex,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             speak(spannableString.toString());
         } catch (IOException e) {
             e.printStackTrace();
