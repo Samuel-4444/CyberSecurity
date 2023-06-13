@@ -1,0 +1,39 @@
+Index: app/src/main/java/com/example/cybersecurityapp/TTS.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cybersecurityapp;\r\n\r\nimport android.content.Context;\r\nimport android.speech.tts.TextToSpeech;\r\nimport android.text.Spannable;\r\nimport android.text.SpannableString;\r\nimport android.text.style.BackgroundColorSpan;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport java.io.BufferedReader;\r\nimport java.io.FileReader;\r\nimport java.io.IOException;\r\nimport java.util.Locale;\r\n\r\npublic class TTS extends AppCompatActivity implements TextToSpeech.OnInitListener {\r\n\r\n    private TextToSpeech tts;\r\n    private boolean initialised;\r\n    private Context context;\r\n\r\n\r\n    public TTS(Context context){\r\n        this.context = context;\r\n        tts = new TextToSpeech(context, this);\r\n    }\r\n\r\n    public void speak(String text) {\r\n        if (initialised){\r\n            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);\r\n        } else {\r\n            Toast.makeText(context, \"Text-to-speech is not initialised yet.\", Toast.LENGTH_SHORT).show();\r\n        }\r\n    }\r\n\r\n    public void speakPageContent(String pageContent) {\r\n        if (initialised) {\r\n            tts.speak(pageContent, TextToSpeech.QUEUE_FLUSH, null, null);\r\n        } else {\r\n            Toast.makeText(context, \"Text-to-speech is not initialized yet.\", Toast.LENGTH_SHORT).show();\r\n        }\r\n    }\r\n\r\n    public void speakPageContentFromFile(String filePath) {\r\n        try {\r\n            StringBuilder content = new StringBuilder();\r\n            BufferedReader reader = new BufferedReader(new FileReader(filePath));\r\n            String line;\r\n            while ((line = reader.readLine()) != null) {\r\n                content.append(line).append(\"\\n\");\r\n            }\r\n            reader.close();\r\n            speak(content.toString());\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public void speakHighlightedPageContentFromFile(String filePath, String highlightedText) {\r\n        try {\r\n            StringBuilder content = new StringBuilder();\r\n            BufferedReader reader = new BufferedReader(new FileReader(filePath));\r\n            String line;\r\n            while ((line = reader.readLine()) != null) {\r\n                content.append(line).append(\"\\n\");\r\n            }\r\n            reader.close();\r\n\r\n            SpannableString spannableString = new SpannableString(content.toString());\r\n            int startIndex = content.indexOf(highlightedText);\r\n            int endIndex = startIndex + highlightedText.length();\r\n\r\n            spannableString.setSpan(new BackgroundColorSpan(0xFFFF00), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);\r\n            speak(spannableString.toString());\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public void shutdown(){\r\n        tts.shutdown();\r\n    }\r\n\r\n    @Override\r\n    public void onInit(int status){\r\n        if (status == TextToSpeech.SUCCESS){\r\n            int result = tts.setLanguage(Locale.getDefault());\r\n            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){\r\n                Toast.makeText(context, \"Language not supported.\", Toast.LENGTH_SHORT).show();\r\n            } else {\r\n                initialised = true;\r\n            }\r\n        } else {\r\n            Toast.makeText(context, \"Initialisation failed.\", Toast.LENGTH_SHORT).show();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/cybersecurityapp/TTS.java b/app/src/main/java/com/example/cybersecurityapp/TTS.java
+--- a/app/src/main/java/com/example/cybersecurityapp/TTS.java	(revision 73d5fb84ec8000736a7d48933879dbdf422d67ac)
++++ b/app/src/main/java/com/example/cybersecurityapp/TTS.java	(date 1686676256122)
+@@ -71,7 +71,8 @@
+             int startIndex = content.indexOf(highlightedText);
+             int endIndex = startIndex + highlightedText.length();
+ 
+-            spannableString.setSpan(new BackgroundColorSpan(0xFFFF00), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
++            spannableString.setSpan(new BackgroundColorSpan(0xFFFF00), startIndex, endIndex,
++                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+             speak(spannableString.toString());
+         } catch (IOException e) {
+             e.printStackTrace();
+Index: app/src/main/res/layout/accessibility_setting.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <Switch\r\n        android:id=\"@+id/switch1\"\r\n        android:layout_width=\"320dp\"\r\n        android:layout_height=\"105dp\"\r\n        android:layout_marginStart=\"32dp\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:background=\"@color/purple_200\"\r\n        android:rotationY=\"0\"\r\n        android:text=\"Dark Mode\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"32dp\"\r\n        android:thumbTint=\"@color/light_grey\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.44\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.845\"\r\n\r\n        />\r\n\r\n    <SeekBar\r\n        android:id=\"@+id/seekBar\"\r\n        android:layout_width=\"218dp\"\r\n        android:layout_height=\"81dp\"\r\n\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.227\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.627\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/accessibility_setting.xml b/app/src/main/res/layout/accessibility_setting.xml
+--- a/app/src/main/res/layout/accessibility_setting.xml	(revision 73d5fb84ec8000736a7d48933879dbdf422d67ac)
++++ b/app/src/main/res/layout/accessibility_setting.xml	(date 1686674780284)
+@@ -36,6 +36,6 @@
+         app:layout_constraintHorizontal_bias="0.227"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.627" />
++        app:layout_constraintVertical_bias="0.635" />
+ 
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
