@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView english;
     ImageView french;
     ImageView spanish;
-    static Integer val = 0 ;
+    public static Integer val = 0 ;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
