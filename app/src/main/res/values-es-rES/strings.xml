@@ -35,5 +35,6 @@
     <string name="french">Francés</string>
     <string name="spanish">Español</string>
     <string name="langs" >Idiomas</string>
+    <string name="questions">Pregunta:</string>
 
 </resources>
