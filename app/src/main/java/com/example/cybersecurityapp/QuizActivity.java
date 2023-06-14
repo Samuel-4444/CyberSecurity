@@ -119,7 +119,22 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
                 String quiz = jObject.getString("quiz_name");
                 String question = (String) jObject.get("questions");
                 questionTV.setText(question);
-                
+                Scanner json = new Scanner(jObject.get("choices").toString());
+                json.useDelimiter(",");
+                String[] jsonArray = new String[4];
+                for (int j=0; j < 4; j++){
+                    jsonArray[j] = json.next();
+                }
+                String answer1text = jsonArray[0];
+                String answer2text = jsonArray[1];
+                String answer3text = jsonArray[2];
+                String answer4text = jsonArray[3];
+
+                answer1.setText(answer1text);
+                answer2.setText(answer2text);
+                answer3.setText(answer3text);
+                answer4.setText(answer4text);
+
 
             }
         }
