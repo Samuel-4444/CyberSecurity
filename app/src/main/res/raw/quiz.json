@@ -1,28 +1,42 @@
 [
   {
-    "topic_name": "Topic one",
-    "sub_pages": [
-      {
-        "text": "Page one",
-        "image": "Image one"
-      },
-      {
-        "text": "Page two",
-        "image": "Image two"
-      }
-    ]
-  },
-  {
-    "topic_name": "Topic two",
-    "sub_pages": [
-      {
-        "text": "Page one",
-        "image": "Image one"
-      },
-      {
-        "text": "Page two",
-        "image": "Image two"
-      }
+    "quiz_name": "Quiz",
+    "questions" : [
+      "question1",
+      "question2",
+      "question3",
+      "question4"
+      ],
+    "choices": [[
+      "ans1",
+      "ans2",
+      "ans3",
+      "ans4"
+    ],
+    [
+      "ans1",
+      "ans2",
+      "ans3",
+      "ans4"
+    ],
+      [
+        "ans1",
+        "ans2",
+        "ans3",
+        "ans4"
+      ],[
+        "ans1",
+        "ans2",
+        "ans3",
+        "ans4"
+      ]
+    ],
+    "correct_answers": [
+      "ans1",
+      "ans1",
+      "ans1",
+      "ans1"
     ]
   }
+
 ]
