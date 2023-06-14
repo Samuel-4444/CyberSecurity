@@ -59,17 +59,23 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             JSONArray jArray = new JSONArray(jString);
             for (int i = 0; i < jArray.length(); i++) {
                 JSONObject jObject = jArray.getJSONObject(i);
-                String topic = jObject.getString("topic_name");
+                String quiz = jObject.getString("quiz_name");
+                String question = jObject.getString("questions");
                 // jObject -> String
                 String jsonObjString = jObject.toString();
 
-                // Create button
-                //createMenu(topic, jsonObjString);
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         //InputStream
+    }
+
+    public void quizMenu(){
+
+        questionTV = findViewById(R.id.question);
+        questionTV.setText
     }
 
     @Override
