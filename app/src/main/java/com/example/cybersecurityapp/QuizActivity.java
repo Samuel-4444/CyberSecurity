@@ -45,7 +45,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void readFromJSON(){                            //method to read questions and answers from json
-        InputStream 
+        //InputStream
     }
 
     @Override

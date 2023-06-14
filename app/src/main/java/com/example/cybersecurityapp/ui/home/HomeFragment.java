@@ -10,10 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.cybersecurityapp.databinding.FragmentHomeBinding;
+//import com.example.cybersecurityapp.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
-
+    /*
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -34,4 +34,5 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+     */
 }
