@@ -1,0 +1,42 @@
+[
+  {
+    "quiz_name": "Quiz",
+    "questions" : [
+      "Quelle est la meilleure pratique pour structurer un mot de passe ?",
+      "Dans quels comptes devez-vous activer l'authentification à deux facteurs (2FA) ?",
+      "À quelle fréquence devez-vous mettre à jour votre logiciel ?",
+      ", Que devez-vous faire si vous recevez un e-mail suspect ? "
+    ],
+    "choices": [[
+      "Au moins 4 caractères",
+      "Au moins 12 caractères",
+      "Utiliser des mots simples pour vous aider à vous souvenir",
+      "Utiliser votre nom comme mot de passe"
+    ],
+      [
+        "E-mail",
+        "Bancaire",
+        "Gestionnaire de mots de passe",
+        "Tout ce qui précède"
+      ],
+      [
+        "Toutes les semaines",
+        "Chaque mois",
+        "Dès qu'une mise à jour est publiée",
+        "Jamais"
+      ],[
+        "Cliquez sur un lien",
+        "Répondre à l'e-mail",
+        "Supprimer l'e-mail",
+        "Supprimer et signaler comme spam"
+      ]
+    ],
+    "correct_answers": [
+      "Au moins 12 caractères",
+      "Tout ce qui précède",
+      "Dès qu'une mise à jour est publiée",
+      "Supprimer et signaler comme spam"
+    ]
+  }
+
+]

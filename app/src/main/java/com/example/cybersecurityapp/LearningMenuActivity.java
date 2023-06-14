@@ -20,6 +20,8 @@ import java.util.Scanner;
 
 public class LearningMenuActivity extends AppCompatActivity {
 
+    InputStream is;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,12 @@ public class LearningMenuActivity extends AppCompatActivity {
 
     private void jsonParser() {
         Resources r = getResources();
-        InputStream is = r.openRawResource(R.raw.eng_notes);
+         is = r.openRawResource(R.raw.eng_notes);
+         if (MainActivity.val == 1){
+             is = r.openRawResource(R.raw.fr_notes);
+         } else if (MainActivity.val == 2) {
+             is = r.openRawResource(R.raw.es_notes);
+         }
         Scanner scanner = new Scanner(is);
         String jString = scanner.useDelimiter("\\A").next();
         scanner.close();

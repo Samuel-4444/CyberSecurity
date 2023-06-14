@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView english;
     ImageView french;
     ImageView spanish;
+    static Integer val = 0 ;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         english.setOnClickListener(v -> {
             setLocale("en");
+            val = 0;
             Intent intent = getIntent();
             finish();
             startActivity(intent);
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         french.setOnClickListener(v -> {
             setLocale("fr");
+            val = 1;
             Intent intent = getIntent();
             finish();
             startActivity(intent);
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 setLocale("es");
+                val = 2;
                 Intent intent = getIntent();
                 finish();
                 startActivity(intent);

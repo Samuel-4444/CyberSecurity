@@ -5,20 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/dark"
-        android:layout_width="71dp"
-        android:layout_height="76dp"
-        android:background="@null"
-        android:contentDescription="@string/descriptionDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349"
-        app:srcCompat="@drawable/baseline_contrast_24"
-        tools:ignore="MissingConstraints" />
+
 
 
 
@@ -39,18 +26,7 @@
         app:layout_constraintVertical_bias="0.328"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/lang"
-        android:layout_width="108dp"
-        android:layout_height="38dp"
-        app:srcCompat="@drawable/baseline_language_24"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="435dp"
-        android:background="@null"
-        tools:ignore="MissingConstraints"
 
-
-        />
 
 
 
