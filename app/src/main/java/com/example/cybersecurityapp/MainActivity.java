@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void TestButtonPressed(View v){
-        Intent intent = new Intent(this, LearningViewActivity.class);
+        Intent intent = new Intent(this, LearningMenuActivity.class);
         startActivity(intent);
     }
 }
