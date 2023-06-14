@@ -13,7 +13,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.cybersecurityapp.databinding.ActivityMenuBinding;
 
 public class MenuActivity extends AppCompatActivity {
-
+/*
     private ActivityMenuBinding binding;
 
     @Override
@@ -33,5 +33,5 @@ public class MenuActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
-
+*/
 }
