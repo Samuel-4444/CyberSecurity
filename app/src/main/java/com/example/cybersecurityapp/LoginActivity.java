@@ -48,8 +48,8 @@ public class LoginActivity extends AppCompatActivity {
             if (db.checkEmail(email)){
                 if (db.checkAccountDetails(email,passText)){
                     Toast.makeText(LoginActivity.this,"Successful Login",Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(LoginActivity.this,MainMenuActivity.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(LoginActivity.this,"Unsuccessful Login",Toast.LENGTH_SHORT).show();

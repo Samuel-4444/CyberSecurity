@@ -1,5 +1,6 @@
 package com.example.cybersecurityapp;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,6 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -45,6 +50,25 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void readFromJSON(){                            //method to read questions and answers from json
+        Resources r = getResources();
+        InputStream is = r.openRawResource(R.raw.quiz);
+        Scanner scanner = new Scanner(is);
+        String jString = scanner.useDelimiter("\\A").next();
+        scanner.close();
+        try {
+            JSONArray jArray = new JSONArray(jString);
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject jObject = jArray.getJSONObject(i);
+                String topic = jObject.getString("topic_name");
+                // jObject -> String
+                String jsonObjString = jObject.toString();
+
+                // Create button
+                //createMenu(topic, jsonObjString);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         //InputStream
     }
 

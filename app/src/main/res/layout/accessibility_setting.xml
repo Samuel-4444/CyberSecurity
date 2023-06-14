@@ -39,5 +39,19 @@
         app:layout_constraintVertical_bias="0.328"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/lang"
+        android:layout_width="108dp"
+        android:layout_height="38dp"
+        app:srcCompat="@drawable/baseline_language_24"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="435dp"
+        android:background="@null"
+        tools:ignore="MissingConstraints"
+
+
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,28 +57,6 @@ public class TTS extends AppCompatActivity implements TextToSpeech.OnInitListene
         }
     }
 
-    public void speakHighlightedPageContentFromFile(String filePath, String highlightedText) {
-        try {
-            StringBuilder content = new StringBuilder();
-            BufferedReader reader = new BufferedReader(new FileReader(filePath));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append("\n");
-            }
-            reader.close();
-
-            SpannableString spannableString = new SpannableString(content.toString());
-            int startIndex = content.indexOf(highlightedText);
-            int endIndex = startIndex + highlightedText.length();
-
-            spannableString.setSpan(new BackgroundColorSpan(0xFFFF00), startIndex, endIndex,
-                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            speak(spannableString.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void shutdown(){
         tts.shutdown();
     }

@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GuestButtonPressed(View v){
-//        Intent intent = new Intent(MainActivity.this,MainMenuActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+        startActivity(intent);
     }
 
     public void TestButtonPressed(View v){
