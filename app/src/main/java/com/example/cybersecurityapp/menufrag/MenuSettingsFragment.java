@@ -1,5 +1,9 @@
 package com.example.cybersecurityapp.menufrag;
 
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.cybersecurityapp.MainActivity;
 import com.example.cybersecurityapp.R;
+
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,4 +70,6 @@ public class MenuSettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu_settings, container, false);
     }
+
+
 }

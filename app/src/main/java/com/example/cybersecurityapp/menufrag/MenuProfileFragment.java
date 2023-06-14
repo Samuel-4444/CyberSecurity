@@ -1,12 +1,17 @@
 package com.example.cybersecurityapp.menufrag;
 
+import android.content.ClipData;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.cybersecurityapp.R;
 
@@ -25,6 +30,10 @@ public class MenuProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    View darkMode;
+    boolean isNight;
+
 
     public MenuProfileFragment() {
         // Required empty public constructor
@@ -62,5 +71,31 @@ public class MenuProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu_profile, container, false);
+    }
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        View a = getView();
+
+        darkMode = a.findViewById(R.id.dark);
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
+            isNight = false;
+        } else {
+            isNight = true;
+        }
+
+        darkMode.setOnClickListener(v -> {
+            if (isNight) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                isNight = false;
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                isNight = true;
+
+            }
+        });
     }
 }

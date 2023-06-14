@@ -19,7 +19,24 @@ public class MenuActivity extends AppCompatActivity {
         MenuPagerAdapter menuPagerAdapter = new MenuPagerAdapter(this);
         viewPager2.setAdapter(menuPagerAdapter);
 
-
+//
+//        darkMode = findViewById(R.id.dark);
+//        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
+//            isNight = false;
+//        } else {
+//            isNight = true;
+//        }
+//
+//        darkMode.setOnClickListener(v -> {
+//            if (isNight) {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//                isNight = false;
+//            } else {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//                isNight = true;
+//
+//            }
+//        });
 
 
 
