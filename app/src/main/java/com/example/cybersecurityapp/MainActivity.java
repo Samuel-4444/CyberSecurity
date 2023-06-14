@@ -111,12 +111,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MenuActivity.class);
         startActivity(intent);
     }
-
-    public void TestButtonPressed(View v){
-        Intent intent = new Intent(this, LearningMenuActivity.class);
-        startActivity(intent);
-    }
-
-
-
 }
