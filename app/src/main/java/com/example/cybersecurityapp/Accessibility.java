@@ -19,9 +19,7 @@ public class Accessibility extends AppCompatActivity {
 
 
     ImageButton darkMode;
-    ImageView english;
-    ImageView french;
-    ImageView spanish;
+
 
     boolean isNight;
 
@@ -33,7 +31,7 @@ public class Accessibility extends AppCompatActivity {
 //        actionBar.setTitle(getResources().getString(R.string.app_name));
 
 
-        loadLocale();
+
 
 //Dark Mode
         darkMode = findViewById(R.id.dark);
@@ -57,50 +55,7 @@ public class Accessibility extends AppCompatActivity {
 //
 
 
-        english = findViewById(R.id.flag1);
-        english.setOnClickListener(v -> {
-                setLocale("en");
-        });
-
-        french = findViewById(R.id.flag2);
-
-        french.setOnClickListener(v -> {
-                setLocale("fr");
-        });
-
-        spanish = findViewById(R.id.flag3);
-        spanish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setLocale("fr");
-            }
-        });
 
 
 
-
-//        Languages
-
-    }
-
-    private void setLocale(String lang){
-        Locale locale = new Locale(lang);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.setLocale(locale);
-        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
-
-
-        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
-        editor.putString("My_Language",lang);
-        editor.apply();
-    };
-
-    private void loadLocale() {
-        SharedPreferences pref = getSharedPreferences ("Settings", Activity.MODE_PRIVATE);
-        String language = pref.getString("My_Language", "");
-        setLocale(language);
-
-    }
-
-}
+}}

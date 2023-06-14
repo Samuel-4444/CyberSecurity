@@ -20,47 +20,11 @@
         app:srcCompat="@drawable/baseline_contrast_24"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/flag1"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
-        android:contentDescription="@string/english"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ukflag"
-        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/flag2"
-        android:layout_width="85dp"
-        android:layout_height="80dp"
-        android:contentDescription="@string/french"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.687"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686"
-        app:srcCompat="@drawable/franceflag"
-        android:focusable="true"
-        tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/flag3"
-        android:layout_width="100dp"
-        android:layout_height="99dp"
-        android:contentDescription="@string/spanish"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.621"
-        app:srcCompat="@drawable/spainflag"
-        android:focusable="false"
-        tools:ignore="MissingConstraints" />
+
+
+
 
     <TextView
         android:id="@+id/textView9"
