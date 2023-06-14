@@ -21,6 +21,9 @@
     <string name="email">Email</string>
     <string name="background">background</string>
     <string name="account_requirements">Account Requirements</string>
+
+
+
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_home">Home</string>
     <string name="title_Profile">Profile</string>
@@ -29,4 +32,10 @@
     <string name="test_your_knowledge__string">Test Your Knowledge!</string>
     <string name="Startquzze_string">Start Quiz</string>
     <string name="categories_string">Categories</string>
+
+    <string name="cyberguru">CyberGuru</string>
+    <string name="descriptionDark">Dark Mode</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
+    <string name="spanish">Spanish</string>
 </resources>

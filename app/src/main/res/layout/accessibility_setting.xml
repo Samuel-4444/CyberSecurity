@@ -5,37 +5,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="320dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/purple_200"
-        android:rotationY="0"
-        android:text="Dark Mode"
-        android:textColor="@color/white"
-        android:textSize="32dp"
-        android:thumbTint="@color/light_grey"
+    <ImageButton
+        android:id="@+id/dark"
+        android:layout_width="71dp"
+        android:layout_height="76dp"
+        android:background="@null"
+        android:contentDescription="@string/descriptionDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845"
+        app:layout_constraintVertical_bias="0.349"
+        app:srcCompat="@drawable/baseline_contrast_24"
+        tools:ignore="MissingConstraints" />
 
-        />
-
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="218dp"
-        android:layout_height="81dp"
-
+    <ImageView
+        android:id="@+id/flag1"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:contentDescription="@string/english"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.227"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:srcCompat="@drawable/ukflag"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/flag2"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/french"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686"
+        app:srcCompat="@drawable/franceflag"
+        android:focusable="true"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/flag3"
+        android:layout_width="100dp"
+        android:layout_height="99dp"
+        android:contentDescription="@string/spanish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.621"
+        app:srcCompat="@drawable/spainflag"
+        android:focusable="false"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="116dp"
+        android:layout_height="61dp"
+        android:text="@string/welcome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.328"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
