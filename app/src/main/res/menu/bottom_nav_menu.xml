@@ -25,8 +25,7 @@
         />
 
 
-<item
-        android:id="@+id/nav_accessibility"
-        android:icon="@drawable/baseline_language_24"
-        android:title="Accessibility" />
+
+
+
 </menu>
