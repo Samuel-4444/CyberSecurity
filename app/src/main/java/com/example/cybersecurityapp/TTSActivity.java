@@ -7,11 +7,13 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class TTSActivity extends AppCompatActivity{
 
         private TTS tts;
         //private String filePath = "/filepath.txt";
-        //private String highlightedText = "highlighted text";
+        //private String pageContent = "highlighted text";
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +22,14 @@ public class TTSActivity extends AppCompatActivity{
 
             tts = new TTS(this);
 
-            ImageButton speakButton = findViewById(R.id.speak_button);
+            FloatingActionButton speakButton = findViewById(R.id.speak_button);
             speakButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   // tts.speakHighlightedPageContentFromFile(filePath, highlightedText);
+                    //read from file
+                   //tts.speakPageContentFromFile(filePath);
+                    //read from string
+                   //tts.speakPageContent(pageContent);
                 }
             });
         }
