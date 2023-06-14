@@ -14,8 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class LearningNoteFragment extends Fragment {
 
-    private TTS tts;
-    private String pageContent;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,17 +39,6 @@ public class LearningNoteFragment extends Fragment {
         ln_text_topic.setText(topic);
         ln_text_note.setText(note);
 
-        //TTS
-        tts = new TTS(this);
 
-        FloatingActionButton speakButton = v.findViewById(R.id.speak_button);
-        speakButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pageContent = note;
-                //read from string
-                tts.speakPageContent(pageContent);
-            }
-        });
     }
 }
