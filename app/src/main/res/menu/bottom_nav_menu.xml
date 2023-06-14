@@ -7,18 +7,11 @@
 <!--        android:title="@string/title_Profile" />-->
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/nav_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/dark"
-        android:icon="@drawable/baseline_dark_mode_24"
-        android:title="@string/descriptionDark" />
-    <item
-        android:id="@+id/lang"
+        android:id="@+id/nav_accessibility"
         android:icon="@drawable/baseline_language_24"
-        android:title="@string/langs" />
-
-
-
+        android:title="Accessibility" />
 </menu>

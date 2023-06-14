@@ -1,11 +1,15 @@
 package com.example.cybersecurityapp;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.cybersecurityapp.databinding.ActivityMenuBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class MenuActivity extends AppCompatActivity {
     private ActivityMenuBinding binding;
@@ -15,9 +19,33 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        // ViewPager2 Init
         ViewPager2 viewPager2 = findViewById(R.id.menu_pager);
         MenuPagerAdapter menuPagerAdapter = new MenuPagerAdapter(this);
         viewPager2.setAdapter(menuPagerAdapter);
+
+        // NavBar Init
+        BottomNavigationView bNavView = findViewById(R.id.menu_nav_view);
+        bNavView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.nav_home) {
+                    viewPager2.setCurrentItem(0);
+                } else if (itemId == R.id.nav_accessibility) {
+                    viewPager2.setCurrentItem(1);
+                }
+                return true;
+            }
+        });
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                bNavView.getMenu().getItem(position).setChecked(true);
+
+            }
+        });
 
 //
 //        darkMode = findViewById(R.id.dark);
@@ -37,27 +65,5 @@ public class MenuActivity extends AppCompatActivity {
 //
 //            }
 //        });
-
-
-
-
-
-
-
-
-
-
-//        binding = ActivityMenuBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
-//
-//        BottomNavigationView navView = findViewById(R.id.nav_view);
-//        // Passing each menu ID as a set of Ids because each
-//        // menu should be considered as top level destinations.
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-//                .build();
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_menu);
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-//        NavigationUI.setupWithNavController(binding.navView, navController);
     }
 }

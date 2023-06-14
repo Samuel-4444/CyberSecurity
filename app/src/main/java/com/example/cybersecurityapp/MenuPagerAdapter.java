@@ -6,11 +6,10 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.cybersecurityapp.menufrag.MenuHomeFragment;
-import com.example.cybersecurityapp.menufrag.MenuProfileFragment;
 import com.example.cybersecurityapp.menufrag.MenuSettingsFragment;
 
 public class MenuPagerAdapter extends FragmentStateAdapter {
-    private static final int NUM_PAGES = 3;
+    private static final int NUM_PAGES = 2;
     public MenuPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
@@ -20,13 +19,11 @@ public class MenuPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch(position) {
             case 0:
-                return new MenuProfileFragment();
-            case 1:
                 return new MenuHomeFragment();
-            case 2:
+            case 1:
                 return new MenuSettingsFragment();
             default:
-                return new MenuProfileFragment();
+                return new MenuHomeFragment();
         }
     }
 

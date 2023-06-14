@@ -14,7 +14,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="SETTINGS TEST"
+            android:text="accessibility stuff goes here"
             android:textSize="48sp"
             tools:layout_editor_absoluteX="103dp"
             tools:layout_editor_absoluteY="241dp" />
