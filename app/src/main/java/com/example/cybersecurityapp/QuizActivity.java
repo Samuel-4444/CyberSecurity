@@ -11,13 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextView totalQuestionsTV, questionTV;
     Button answer1, answer2, answer3, answer4, submit;
-    int tally=0, totalQuestions = 0, questionIndex = 0;
+    int tally=0, totalQuestions = 0, questionIndex = 0;             //define variables
     String selectAnswer = "";
 
 
@@ -27,13 +28,13 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         totalQuestionsTV = findViewById(R.id.question_total);
         questionTV = findViewById(R.id.question);
-        answer1 = findViewById(R.id.ans1);
+        answer1 = findViewById(R.id.ans1);                      //link variables to views
         answer2 = findViewById(R.id.ans2);
         answer3 = findViewById(R.id.ans3);
         answer4 = findViewById(R.id.ans4);
         submit = findViewById(R.id.submit_ans);
 
-        answer1.setOnClickListener(this);
+        answer1.setOnClickListener(this);                   //give variables onclicklisteners
         answer2.setOnClickListener(this);
         answer3.setOnClickListener(this);
         answer4.setOnClickListener(this);
@@ -43,20 +44,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    void readFromFile(){
-        try{
-            Scanner quizFile = new Scanner("quiz_questions.txt");
-
-            quizFile.close();
-        }
-        catch(FileNotFoundException e){
-            Log.e("read activity", "File not found: " + e.toString());
-        }
-        catch(IOException e){
-            Log.e("read activity", "File not found: " + e.toString());
-        }
-
-
+    void readFromJSON(){                            //method to read questions and answers from json
+        InputStream 
     }
 
     @Override
