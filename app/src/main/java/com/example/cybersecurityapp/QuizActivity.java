@@ -69,6 +69,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        //InputStream
     }
 
     @Override
