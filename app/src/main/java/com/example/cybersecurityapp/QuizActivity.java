@@ -64,7 +64,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 String jsonObjString = jObject.toString();
 
                 // Create button
-                createMenu(topic, jsonObjString);
+                //createMenu(topic, jsonObjString);
             }
         } catch (JSONException e) {
             e.printStackTrace();

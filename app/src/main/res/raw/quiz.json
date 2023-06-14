@@ -2,7 +2,7 @@
   {
     "quiz_name": "Quiz",
     "questions" : [
-      "question1",
+      "What is best practice for structuring a password?",
       "question2",
       "question3",
       "question4"
