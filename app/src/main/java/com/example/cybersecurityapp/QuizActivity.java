@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -44,7 +45,8 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     void readFromFile(){
         try{
-            FileReader quizFile = new FileReader ("quiz_questions.txt");
+            Scanner quizFile = new Scanner("quiz_questions.txt");
+
             quizFile.close();
         }
         catch(FileNotFoundException e){
