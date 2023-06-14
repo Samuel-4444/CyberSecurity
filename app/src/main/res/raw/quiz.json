@@ -3,39 +3,39 @@
     "quiz_name": "Quiz",
     "questions" : [
       "What is best practice for structuring a password?",
-      "question2",
-      "question3",
-      "question4"
+      "In which accounts should you activate Two-Factor Authentication (2FA)?",
+      "How often should you update your software?",
+      "What should you do if you receive a suspicious looking email?"
       ],
     "choices": [[
-      "ans1",
-      "ans2",
-      "ans3",
-      "ans4"
+      "At least 4 characters",
+      "At least 12 characters",
+      "Using simple words to help you remember",
+      "Using your name as the password"
     ],
     [
-      "ans1",
-      "ans2",
-      "ans3",
-      "ans4"
+      "Email",
+      "Banking",
+      "Password manager",
+      "All of the above"
     ],
       [
-        "ans1",
-        "ans2",
-        "ans3",
-        "ans4"
+        "Every week",
+        "Every month",
+        "As soon as an update is released",
+        "Never"
       ],[
-        "ans1",
-        "ans2",
-        "ans3",
-        "ans4"
+        "Click on a link",
+        "Reply to the email",
+        "Delete the email",
+        "Delete and report as spam"
       ]
     ],
     "correct_answers": [
-      "ans1",
-      "ans1",
-      "ans1",
-      "ans1"
+      "At least 12 characters",
+      "All of the above",
+      "As soon as an update is released",
+      "Delete and report as spam"
     ]
   }
 

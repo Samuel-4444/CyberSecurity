@@ -12,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LearningPagerAdapter extends FragmentStateAdapter {
-    private static final int NUM_PAGES = 2;
+    private static final int NUM_PAGES = 2; //CHANGE ME LATER
     private String topic;
     private JSONObject jsonObj;
 
