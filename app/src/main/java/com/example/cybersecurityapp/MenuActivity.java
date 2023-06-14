@@ -73,25 +73,8 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        //
-        // darkMode = findViewById(R.id.dark);
-        // if (AppCompatDelegate.getDefaultNightMode() ==
-        // AppCompatDelegate.MODE_NIGHT_NO) {
-        // isNight = false;
-        // } else {
-        // isNight = true;
-        // }
-        //
-        // darkMode.setOnClickListener(v -> {
-        // if (isNight) {
-        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        // isNight = false;
-        // } else {
-        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        // isNight = true;
-        //
-        // }
-        // });
+
+
     }
 
     public void darkMethod(MenuItem item) {
@@ -154,6 +137,5 @@ public class MenuActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    public void showDialog() {
-    }
+
 }
