@@ -112,8 +112,14 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
         String jString = scan.useDelimiter("\\A").next();
         scan.close();
         try{
+            questionTV = findViewById(R.id.question);
             JSONArray jArray = new JSONArray(jString);
             for (int i=0; i < jArray.length(); i++){
+                JSONObject jObject = jArray.getJSONObject(i);
+                String quiz = jObject.getString("quiz_name");
+                String question = (String) jObject.get("questions");
+                questionTV.setText(question);
+                
 
             }
         }
@@ -122,9 +128,9 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
         }
 
 
-        questionTV = findViewById(R.id.question);
-        questionTV.setText("hi");           //change to json!
-//        questionTV.setText
+
+                   //change to json!
+
     }
 
     @Override
