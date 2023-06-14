@@ -10,13 +10,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class LearningNoteFragment extends Fragment {
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_learning_note, container, false);
+
     }
 
     @Override
@@ -34,5 +38,20 @@ public class LearningNoteFragment extends Fragment {
 
         ln_text_topic.setText(topic);
         ln_text_note.setText(note);
+
+        FloatingActionButton speakButton = v.findViewById(R.id.speak_button);
+        speakButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TTS tts = new TTS(this);
+                tts.speakText(ln_text_topic);
+                tts.speakText(ln_text_note);
+            }
+        });
+
+
+
+
+
     }
 }

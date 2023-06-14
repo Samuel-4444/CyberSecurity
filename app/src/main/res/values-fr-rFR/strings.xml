@@ -22,6 +22,13 @@
     <string name="email">Courriel</string>
     <string name="background">arrière-plan</string>
     <string name="account_requirements">Exigences du compte</string>
+    <string name="title_activity_menu">MenuActivité</string>
+    <string name="title_home">Maison</string>
+    <string name="title_Profile">Profil</string>
+    <string name="title_Settings">Paramètres</string>
+    <string name="test_your_knowledge__string">Testez vos connaissances!</string>
+    <string name="Startquzze_string">Démarrer le questionnaire</string>
+    <string name="categories_string">Catégories</string>
     <string name="cyberguru">Cybergourou</string>
     <string name="descriptionDark">Mode sombre</string>
     <string name="english">Anglais</string>

@@ -1,0 +1,42 @@
+[
+  {
+    "quiz_name": "Cuestionario",
+    "questions" : [
+      "¿Cuál es la mejor práctica para estructurar una contraseña?",
+      "¿En qué cuentas debe activar la autenticación de dos factores (2FA)?",
+      "¿Con qué frecuencia debe actualizar su software?",
+      "¿Qué debe hacer si recibe un correo electrónico sospechoso?"
+    ],
+    "choices": [[
+      "Al menos 4 caracteres",
+      "Al menos 12 caracteres",
+      "Usando palabras simples para ayudarte a recordar",
+      "Usando su nombre como contraseña"
+    ],
+      [
+        "Correo electrónico",
+        "Bancario",
+        "Administrador de contraseñas",
+        "Todo lo anterior"
+      ],
+      [
+        "Cada semana",
+        "Cada mes",
+        "Tan pronto como se publique una actualización",
+        "Nunca"
+      ],[
+        "Haga clic en un enlace",
+        "Responder al correo electrónico",
+        "Eliminar el correo electrónico",
+        "Eliminar y reportar como spam"
+      ]
+    ],
+    "correct_answers": [
+      "Al menos 12 caracteres",
+      "Todo lo anterior",
+      "Tan pronto como se publique una actualización",
+      "Eliminar y reportar como spam"
+    ]
+  }
+
+]
