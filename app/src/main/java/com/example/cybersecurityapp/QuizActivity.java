@@ -1,6 +1,7 @@
 package com.example.cybersecurityapp;
 
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,28 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
     }
 
+//    void readFromJSON(){                            //method to read questions and answers from json
+//        Resources r = getResources();
+//        InputStream is = r.openRawResource(R.raw.quiz);
+//        Scanner scanner = new Scanner(is);
+//        String jString = scanner.useDelimiter("\\A").next();
+//        scanner.close();
+//        try {
+//            JSONArray jArray = new JSONArray(jString);
+//            for (int i = 0; i < jArray.length(); i++) {
+//                JSONObject jObject = jArray.getJSONObject(i);
+//                String quiz = jObject.getString("quiz_name");
+//                String question = jObject.getString("questions");
+//                // jObject -> String
+//                String jsonObjString = jObject.toString();
+//
+//
+//            }
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        //InputStream
+//    }
 
 //    MainActivity.val will stores an int to decide which language file will be used
     void readFromJSON(){
@@ -83,14 +106,44 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
     }
 
     public void quizMenu(){
+        Resources r = getResources();
+        InputStream is = r.openRawResource(R.raw.quiz);
+        Scanner scan = new Scanner(is);
+        String jString = scan.useDelimiter("\\A").next();
+        scan.close();
+        try{
+            questionTV = findViewById(R.id.question);
+            JSONArray jArray = new JSONArray(jString);
+            for (int i=0; i < jArray.length(); i++){
+                JSONObject jObject = jArray.getJSONObject(i);
+                String quiz = jObject.getString("quiz_name");
+                String question = (String) jObject.get("questions");
+                questionTV.setText(question);
+                
+
+            }
+        }
+        catch(JSONException e){
+            e.printStackTrace();
+        }
 
 
-        questionTV = findViewById(R.id.question);
-//        questionTV.setText
+
+                   //change to json!
+
     }
 
     @Override
     public void onClick(View v) {
+        Button clickedButton = (Button) v;
+        if (clickedButton.getId()==R.id.submit_ans){
+            questionIndex++;
+            quizMenu();
 
+        }
+        else{
+            selectAnswer = clickedButton.getText().toString();
+            clickedButton.setBackgroundColor(Color.MAGENTA);
+        }
     }
 }

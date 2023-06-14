@@ -2,76 +2,45 @@ package com.example.cybersecurityapp;
 
 import android.content.Context;
 import android.speech.tts.TextToSpeech;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.BackgroundColorSpan;
-import android.widget.Toast;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Locale;
 
-public class TTS extends AppCompatActivity implements TextToSpeech.OnInitListener {
-
-    private TextToSpeech tts;
-    private boolean initialised;
+public class TTS {
+    private static final String TAG = "TextViewToSpeech";
     private Context context;
+    private TextToSpeech tts;
 
-
-    public TTS(Context context){
-        this.context = context;
-        tts = new TextToSpeech(context, this);
-    }
-
-    public void speak(String text) {
-        if (initialised){
-            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
-        } else {
-            Toast.makeText(context, "Text-to-speech is not initialised yet.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void speakPageContent(String pageContent) {
-        if (initialised) {
-            tts.speak(pageContent, TextToSpeech.QUEUE_FLUSH, null, null);
-        } else {
-            Toast.makeText(context, "Text-to-speech is not initialized yet.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void speakPageContentFromFile(String filePath) {
-        try {
-            StringBuilder content = new StringBuilder();
-            BufferedReader reader = new BufferedReader(new FileReader(filePath));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append("\n");
+    public TTS(View.OnClickListener context) {
+        this.context = (Context) context;
+        tts = new TextToSpeech((Context) context, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    Locale locale = Locale.getDefault();
+                    if (tts.isLanguageAvailable(locale) == TextToSpeech.LANG_AVAILABLE) {
+                        tts.setLanguage(locale);
+                    } else {
+                        Log.e(TAG, "Unsupported language: " + locale.getLanguage());
+                    }
+                } else {
+                    Log.e(TAG, "Failed to initialize TextToSpeech");
+                }
             }
-            reader.close();
-            speak(content.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        });
     }
 
-    public void shutdown(){
-        tts.shutdown();
+    public void speakText(TextView textView) {
+        String text = textView.getText().toString();
+        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
-    @Override
-    public void onInit(int status){
-        if (status == TextToSpeech.SUCCESS){
-            int result = tts.setLanguage(Locale.getDefault());
-            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
-                Toast.makeText(context, "Language not supported.", Toast.LENGTH_SHORT).show();
-            } else {
-                initialised = true;
-            }
-        } else {
-            Toast.makeText(context, "Initialisation failed.", Toast.LENGTH_SHORT).show();
+    public void release() {
+        if (tts != null) {
+            tts.stop();
+            tts.shutdown();
         }
     }
 }
