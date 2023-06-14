@@ -2,6 +2,7 @@ package com.example.cybersecurityapp;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -10,11 +11,13 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean isNight;
     ImageView english;
     ImageView french;
     ImageView spanish;
@@ -23,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account_menu);
         loadLocale();
+        setContentView(R.layout.activity_account_menu);
+
+
 
         english = findViewById(R.id.flag1);
 
@@ -64,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
 
 //        Languages
 
+
     }
+
+
 
     private void setLocale(String lang){
         Locale locale = new Locale(lang);
@@ -83,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences ("Settings", Activity.MODE_PRIVATE);
         String language = pref.getString("My_Language", "");
         setLocale(language);
+
 
     }
 

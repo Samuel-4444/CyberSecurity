@@ -23,7 +23,7 @@ import java.util.Scanner;
 public class QuizActivity extends AppCompatActivity  implements View.OnClickListener{
 
     TextView totalQuestionsTV, questionTV;
-    InputStream is;
+
     Button answer1, answer2, answer3, answer4, submit;
     int tally=0, totalQuestions = 0, questionIndex = 0;             //define variables
     String selectAnswer = "";
@@ -79,7 +79,7 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
         //method to read questions and answers from json
         Resources r = getResources();
-         is = r.openRawResource(R.raw.quiz);
+        InputStream is = r.openRawResource(R.raw.quiz);
         if (MainActivity.val == 1){
              is = r.openRawResource(R.raw.quizfr);
         } else if (MainActivity.val==2) {
@@ -108,6 +108,11 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
     public void quizMenu(){
         Resources r = getResources();
         InputStream is = r.openRawResource(R.raw.quiz);
+        if (MainActivity.val == 1){
+            is = r.openRawResource(R.raw.quizfr);
+        } else if (MainActivity.val==2) {
+            is = r.openRawResource(R.raw.quizes);
+        }
         Scanner scan = new Scanner(is);
         String jString = scan.useDelimiter("\\A").next();
         scan.close();
