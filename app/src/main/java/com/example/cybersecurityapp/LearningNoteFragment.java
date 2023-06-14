@@ -39,6 +39,19 @@ public class LearningNoteFragment extends Fragment {
         ln_text_topic.setText(topic);
         ln_text_note.setText(note);
 
+        FloatingActionButton speakButton = v.findViewById(R.id.speak_button);
+        speakButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TTS tts = new TTS(this);
+                tts.speakText(ln_text_topic);
+                tts.speakText(ln_text_note);
+            }
+        });
+
+
+
+
 
     }
 }
