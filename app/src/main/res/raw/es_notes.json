@@ -1,0 +1,28 @@
+[
+  {
+    "topic_name": "Prácticas básicas de seguridad",
+    "sub_pages": [
+      {
+        "texto": "Contraseñas fuertes",
+        "image": "Imagen uno"
+      },
+      {
+        "text": "Autenticación de dos factores (2FA):",
+        "image": "Imagen dos"
+      }
+    ]
+  },
+  {
+    "topic_name": "Ingeniería Social",
+    "sub_pages": [
+      {
+        "text": "Suplantación de identidad",
+        "image": "Imagen uno"
+      },
+      {
+        "text": "t2 Página dos",
+        "image": "Imagen dos"
+      }
+    ]
+  }
+]

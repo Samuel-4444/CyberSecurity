@@ -19,9 +19,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class QuizActivity extends AppCompatActivity implements View.OnClickListener{
+public class QuizActivity extends AppCompatActivity  implements View.OnClickListener{
 
     TextView totalQuestionsTV, questionTV;
+    InputStream is;
     Button answer1, answer2, answer3, answer4, submit;
     int tally=0, totalQuestions = 0, questionIndex = 0;             //define variables
     String selectAnswer = "";
@@ -49,9 +50,18 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    void readFromJSON(){                            //method to read questions and answers from json
+
+//    MainActivity.val will stores an int to decide which language file will be used
+    void readFromJSON(){
+
+        //method to read questions and answers from json
         Resources r = getResources();
-        InputStream is = r.openRawResource(R.raw.quiz);
+         is = r.openRawResource(R.raw.quiz);
+        if (MainActivity.val == 1){
+             is = r.openRawResource(R.raw.quizfr);
+        } else if (MainActivity.val==2) {
+            is = r.openRawResource(R.raw.quizes);
+        }
         Scanner scanner = new Scanner(is);
         String jString = scanner.useDelimiter("\\A").next();
         scanner.close();
@@ -74,8 +84,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     public void quizMenu(){
 
+
         questionTV = findViewById(R.id.question);
-        questionTV.setText
+//        questionTV.setText
     }
 
     @Override

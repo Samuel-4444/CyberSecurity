@@ -22,6 +22,13 @@
     <string name="email">Correo electrónico</string>
     <string name="background">fondo</string>
     <string name="account_requirements">Requisitos de la cuenta</string>
+    <string name="title_activity_menu">MenúActividad</string>
+    <string name="title_home">Hogar</string>
+    <string name="title_Profile">"Perfil "</string>
+    <string name="title_Settings">Ajustes</string>
+    <string name="test_your_knowledge__string">¡Prueba tus conocimientos!</string>
+    <string name="Startquzze_string">Iniciar prueba</string>
+    <string name="categories_string">Categorías</string>
     <string name="cyberguru">CyberGuru</string>
     <string name="descriptionDark">Modo oscuro</string>
     <string name="english">Inglés</string>
