@@ -2,9 +2,6 @@ package com.example.cybersecurityapp;
 
 import android.content.Context;
 import android.speech.tts.TextToSpeech;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.BackgroundColorSpan;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +18,7 @@ public class TTS extends AppCompatActivity implements TextToSpeech.OnInitListene
     private Context context;
 
 
-    public TTS(Context context){
+    public TTS(LearningNoteFragment context){
         this.context = context;
         tts = new TextToSpeech(context, this);
     }
