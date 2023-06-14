@@ -96,4 +96,71 @@
         android:onClick="TestButtonPressed"
         android:text="test button, delete later" />
 
+
+    <ImageView
+        android:id="@+id/flag1"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="554dp"
+        android:layout_marginEnd="303dp"
+        android:layout_marginBottom="106dp"
+        android:contentDescription="@string/english"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ukflag"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/flag2"
+        android:layout_width="72dp"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="557dp"
+        android:layout_marginEnd="195dp"
+        android:layout_marginBottom="109dp"
+        android:contentDescription="@string/french"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686"
+        app:srcCompat="@drawable/franceflag"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/flag3"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="556dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="106dp"
+        android:contentDescription="@string/spanish"
+        android:focusable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.621"
+        app:srcCompat="@drawable/spainflag"
+        tools:ignore="MissingConstraints" />
+
 </RelativeLayout>

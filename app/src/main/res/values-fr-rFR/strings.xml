@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CyberSecurityApp</string>
+    <string name="guest">Invité</string>
+    <string name="username">d\'utilisateur</string>
+    <string name="cybersecurity_app">Application de cybersécurité</string>
+    <string name="password">Mot de passe</string>
+    <string name="register">S\'inscrire</string>
+    <string name="confirm_password">Confirmer le mot de passe</string>
+    <string name="forgot_password">Mot de passe oublié</string>
+    <string name="login">Connexion</string>
+    <string name="back">Retour</string>
+    <string name="title_activity_test">TEST</string>
+    <string name="prompt_email">Courriel</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Se connecter ou s\'inscrire</string>
+    <string name="action_sign_in_short">Se connecter</string>
+    <string name="welcome">Bienvenue !</string>
+    <string name="invalid_username">Nom d\'utilisateur non valide</string>
+    <string name="invalid_password">Le mot de passe doit comporter >5 caractères</string>
+    <string name="login_failed">Échec de la connexion</string>
+    <string name="email">Courriel</string>
+    <string name="background">arrière-plan</string>
+    <string name="account_requirements">Exigences du compte</string>
+    <string name="cyberguru">Cybergourou</string>
+    <string name="descriptionDark">Mode sombre</string>
+    <string name="english">Anglais</string>
+    <string name="french">Français</string>
+    <string name="spanish">Espagnol</string>
+</resources>
