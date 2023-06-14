@@ -24,13 +24,6 @@
             android:name=".LearningMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".MainMenu"
-            android:exported="false" />
-        <activity
-            android:name=".ui.login.TEST"
-            android:exported="false"
-            android:label="@string/title_activity_test" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
