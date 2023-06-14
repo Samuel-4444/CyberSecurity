@@ -2,13 +2,8 @@ package com.example.cybersecurityapp;
 
 import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.cybersecurityapp.databinding.ActivityMenuBinding;
 
@@ -19,6 +14,22 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        ViewPager2 viewPager2 = findViewById(R.id.menu_pager);
+        MenuPagerAdapter menuPagerAdapter = new MenuPagerAdapter(this);
+        viewPager2.setAdapter(menuPagerAdapter);
+
+
+
+
+
+
+
+
+
+
+
+
 //        binding = ActivityMenuBinding.inflate(getLayoutInflater());
 //        setContentView(binding.getRoot());
 //

@@ -29,4 +29,6 @@
     <string name="test_your_knowledge__string">Test Your Knowledge!</string>
     <string name="Startquzze_string">Start Quiz</string>
     <string name="categories_string">Categories</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
