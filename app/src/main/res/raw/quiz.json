@@ -19,17 +19,18 @@
       "Password manager",
       "All of the above"
     ],
-      [
-        "Every week",
-        "Every month",
-        "As soon as an update is released",
-        "Never"
-      ],[
-        "Click on a link",
-        "Reply to the email",
-        "Delete the email",
-        "Delete and report as spam"
-      ]
+    [
+      "Every week",
+      "Every month",
+      "As soon as an update is released",
+      "Never"
+    ],
+    [
+      "Click on a link",
+      "Reply to the email",
+      "Delete the email",
+      "Delete and report as spam"
+    ]
     ],
     "correct_answers": [
       "At least 12 characters",

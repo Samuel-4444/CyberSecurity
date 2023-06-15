@@ -48,10 +48,5 @@ public class LearningNoteFragment extends Fragment {
                 tts.speakText(ln_text_note);
             }
         });
-
-
-
-
-
     }
 }
