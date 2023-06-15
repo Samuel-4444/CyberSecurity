@@ -3,7 +3,8 @@
     "topic_name": "Basic Security Practices",
     "sub_pages": [
       {
-        "text": "Strong Passwords",
+        "text": "Passwords Should be at least 12 characters long",
+
         "image": "Image one"
       },
       {
