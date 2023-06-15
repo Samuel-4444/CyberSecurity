@@ -31,7 +31,7 @@ public class LearningNoteFragment extends Fragment {
         String note = getArguments().getString("note");
 
         // Edit default params
-        View v = getView(); //ADD ME BACK
+        View v = getView();
         TextView ln_text_topic = v.findViewById(R.id.ln_text_topic);
         TextView ln_text_note = v.findViewById(R.id.ln_text_note);
         //ImageView ln_img_image = v.findViewById(R.id.ln_img_image);
