@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Check password
 
-        Boolean validCriteria = true;
+        boolean validCriteria = true;
 
         if (passText.length() <= 4 || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             validCriteria = false;

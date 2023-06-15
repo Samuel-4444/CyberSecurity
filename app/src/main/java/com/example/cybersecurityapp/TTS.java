@@ -6,20 +6,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Locale;
 
-public class TTS {
+public class TTS extends AppCompatActivity {
     private static final String TAG = "TextViewToSpeech";
     private Context context;
     private TextToSpeech tts;
 
-    public TTS(View.OnClickListener context) {
-        this.context = (Context) context;
-        tts = new TextToSpeech((Context) context, new TextToSpeech.OnInitListener() {
+    public TTS(Context context) {
+        this.context = context;
+        tts = new TextToSpeech( context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    Locale locale = Locale.getDefault();
+                    Locale locale = Locale.ENGLISH;
                     if (tts.isLanguageAvailable(locale) == TextToSpeech.LANG_AVAILABLE) {
                         tts.setLanguage(locale);
                     } else {

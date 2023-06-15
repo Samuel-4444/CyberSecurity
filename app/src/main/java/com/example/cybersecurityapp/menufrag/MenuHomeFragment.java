@@ -1,9 +1,11 @@
 package com.example.cybersecurityapp.menufrag;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.cybersecurityapp.MenuActivity;
+import com.example.cybersecurityapp.QuizActivity;
 import com.example.cybersecurityapp.R;
 
 public class MenuHomeFragment extends Fragment {
@@ -25,6 +29,14 @@ public class MenuHomeFragment extends Fragment {
 //            @Override
 //            public void onClick(View v) {
 //                Log.d("TESTACTION","THIS IS A TEST");
+//            }
+//        });
+//        Button button = rootView.findViewById(R.id.startQuizButton);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), QuizActivity.class);
+//                startActivity(intent);
 //            }
 //        });
 

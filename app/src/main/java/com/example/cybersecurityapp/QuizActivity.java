@@ -1,23 +1,22 @@
 package com.example.cybersecurityapp;
 
+import android.content.Intent;
 import android.app.AlertDialog;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
@@ -50,61 +49,31 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
         totalQuestionsTV.setText("Questions: " + totalQuestions);
 
+        Button button = findViewById(R.id.backButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(QuizActivity.this,MenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton speakButton = findViewById(R.id.speak_button);
+        speakButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TTS tts = new TTS(getApplicationContext());
+                tts.speakText(totalQuestionsTV);
+                tts.speakText(questionTV);
+                tts.speakText(answer1);
+                tts.speakText(answer2);
+                tts.speakText(answer3);
+                tts.speakText(answer4);
+            }
+        });
+
     }
 
-//    void readFromJSON(){                            //method to read questions and answers from json
-//        Resources r = getResources();
-//        InputStream is = r.openRawResource(R.raw.quiz);
-//        Scanner scanner = new Scanner(is);
-//        String jString = scanner.useDelimiter("\\A").next();
-//        scanner.close();
-//        try {
-//            JSONArray jArray = new JSONArray(jString);
-//            for (int i = 0; i < jArray.length(); i++) {
-//                JSONObject jObject = jArray.getJSONObject(i);
-//                String quiz = jObject.getString("quiz_name");
-//                String question = jObject.getString("questions");
-//                // jObject -> String
-//                String jsonObjString = jObject.toString();
-//
-//
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        //InputStream
-//    }
-
-//    MainActivity.val will stores an int to decide which language file will be used
-//    void readFromJSON(){
-//
-//        //method to read questions and answers from json
-//        Resources r = getResources();
-//        InputStream is = r.openRawResource(R.raw.quiz);
-//        if (MainActivity.val == 1){
-//             is = r.openRawResource(R.raw.quizfr);
-//        } else if (MainActivity.val==2) {
-//            is = r.openRawResource(R.raw.quizes);
-//        }
-//        Scanner scanner = new Scanner(is);
-//        String jString = scanner.useDelimiter("\\A").next();
-//        scanner.close();
-//        try {
-//            JSONArray jArray = new JSONArray(jString);
-//            for (int i = 0; i < jArray.length(); i++) {
-//                JSONObject jObject = jArray.getJSONObject(i);
-//                String quiz = jObject.getString("quiz_name");
-//                String question = jObject.getString("questions");
-//                // jObject -> String
-//                String jsonObjString = jObject.toString();
-//
-//
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        //InputStream
-//    }
 
     public void quizMenu(){
         if (questionIndex ==  totalQuestions){
@@ -174,9 +143,6 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        
-
-
         Button clickedButton = (Button) v;
         if (clickedButton.getId()==R.id.submit_ans){
             if (selectAnswer.equals(correctChoice)){
@@ -189,7 +155,12 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
         }
         else{
             selectAnswer = clickedButton.getText().toString();
+            answer1.setBackgroundColor(Color.parseColor("#FF03DAC5"));
+            answer2.setBackgroundColor(Color.parseColor("#FF03DAC5"));
+            answer3.setBackgroundColor(Color.parseColor("#FF03DAC5"));
+            answer4.setBackgroundColor(Color.parseColor("#FF03DAC5"));
             clickedButton.setBackgroundColor(Color.MAGENTA);
+
         }
     }
 }

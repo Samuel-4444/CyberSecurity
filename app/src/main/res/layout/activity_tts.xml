@@ -16,6 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/tts" />
+        app:srcCompat="@drawable/tts"
+        android:contentDescription="TODO"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
