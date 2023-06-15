@@ -55,13 +55,5 @@ public class QuizNoteFragment extends Fragment {
         b_ans4.setText(ans4);
 
         // Answering questions
-
-    }
-    public void ans1Button(View v){
-        int id = v.getId();
-        Button button = v.findViewById(id);
-        if (answer == 1) {
-            button.setBackgroundColor(Color.GREEN);
-        }
     }
 }

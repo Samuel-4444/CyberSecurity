@@ -21,19 +21,6 @@ public class MenuHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        View rootView  = inflater.inflate(R.layout.fragment_menu_home,container,false);
-        Button button = rootView.findViewById(R.id.startQuizButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuizActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_menu_home, container, false);
     }
-
-
 }

@@ -3,11 +3,11 @@
     "topic_name": "Basic Security Practices",
     "sub_pages": [
       {
-        "text": "Strong Passwords",
+        "text": "Strong Passwords:\n\nPasswords Should be at least 12 characters long \nIt’s important to use a mix of both letters (uppercase and lowercase), numbers and special characters (e.g. ! % $)",
         "image": "Image one"
       },
       {
-        "text": "Two-Factor Authentication(2FA):",
+        "text": "Two-Factor Authentication(2FA):\n\nAdd an extra layer of security with 2FA.\nEnable 2FA for critical accounts like email, banking, and social media.",
         "image": "Image two"
       }
     ]
@@ -16,11 +16,11 @@
     "topic_name": "Social Engineering",
     "sub_pages": [
       {
-        "text": "Phishing",
+        "text": "Phishing\n\nPhishing uses deceptive emails, messages, or websites to trick users into revealing personal information like passwords and credit card details. ",
         "image": "Image one"
       },
       {
-        "text": "t2 Page two",
+        "text": "Tips to identify and protect against phishing: \nVerify the sender's email address\n check for grammatical errors or unusual requests.",
         "image": "Image two"
       }
     ]
