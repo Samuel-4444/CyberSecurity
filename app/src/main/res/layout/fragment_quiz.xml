@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000836"
+    android:padding="28dp"
+    tools:context=".Quiz">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/questions"
+        android:id="@+id/question_total"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/answers_buttons"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:text="Question 1"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/answers_buttons"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/teal_200"
+            android:layout_margin="8dp"
+            android:text="Answer 1"
+            android:textColor="@color/white"
+            android:id="@+id/ans1"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/teal_200"
+            android:layout_margin="8dp"
+            android:text="Answer 2"
+            android:textColor="@color/white"
+            android:id="@+id/ans2"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/teal_200"
+            android:layout_margin="8dp"
+            android:text="Answer 3"
+            android:textColor="@color/white"
+            android:id="@+id/ans3"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/teal_200"
+            android:layout_margin="8dp"
+            android:text="Answer 4"
+            android:textColor="@color/white"
+            android:id="@+id/ans4"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit_ans"
+        android:text="Submit"
+        android:layout_below="@id/answers_buttons"
+        android:layout_marginTop="50dp"/>
+</RelativeLayout>
