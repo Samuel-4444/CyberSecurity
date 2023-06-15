@@ -1,5 +1,6 @@
 package com.example.cybersecurityapp;
 
+import android.app.AlertDialog;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,8 +26,8 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
     TextView totalQuestionsTV, questionTV;
 
     Button answer1, answer2, answer3, answer4, submit;
-    int tally=0, totalQuestions = 0, questionIndex = 0;             //define variables
-    String selectAnswer = "";
+    int tally=0, totalQuestions = 4, questionIndex = 0;             //define variables
+    String selectAnswer = "", correctChoice;
 
 
     protected void onCreate(Bundle savedInstanceState){
@@ -75,37 +76,42 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 //    }
 
 //    MainActivity.val will stores an int to decide which language file will be used
-    void readFromJSON(){
-
-        //method to read questions and answers from json
-        Resources r = getResources();
-        InputStream is = r.openRawResource(R.raw.quiz);
-        if (MainActivity.val == 1){
-             is = r.openRawResource(R.raw.quizfr);
-        } else if (MainActivity.val==2) {
-            is = r.openRawResource(R.raw.quizes);
-        }
-        Scanner scanner = new Scanner(is);
-        String jString = scanner.useDelimiter("\\A").next();
-        scanner.close();
-        try {
-            JSONArray jArray = new JSONArray(jString);
-            for (int i = 0; i < jArray.length(); i++) {
-                JSONObject jObject = jArray.getJSONObject(i);
-                String quiz = jObject.getString("quiz_name");
-                String question = jObject.getString("questions");
-                // jObject -> String
-                String jsonObjString = jObject.toString();
-
-
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        //InputStream
-    }
+//    void readFromJSON(){
+//
+//        //method to read questions and answers from json
+//        Resources r = getResources();
+//        InputStream is = r.openRawResource(R.raw.quiz);
+//        if (MainActivity.val == 1){
+//             is = r.openRawResource(R.raw.quizfr);
+//        } else if (MainActivity.val==2) {
+//            is = r.openRawResource(R.raw.quizes);
+//        }
+//        Scanner scanner = new Scanner(is);
+//        String jString = scanner.useDelimiter("\\A").next();
+//        scanner.close();
+//        try {
+//            JSONArray jArray = new JSONArray(jString);
+//            for (int i = 0; i < jArray.length(); i++) {
+//                JSONObject jObject = jArray.getJSONObject(i);
+//                String quiz = jObject.getString("quiz_name");
+//                String question = jObject.getString("questions");
+//                // jObject -> String
+//                String jsonObjString = jObject.toString();
+//
+//
+//            }
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        //InputStream
+//    }
 
     public void quizMenu(){
+        if (questionIndex ==  totalQuestions){
+            finishQuiz();
+            return;
+        }
+
         Resources r = getResources();
         InputStream is = r.openRawResource(R.raw.quiz);
         if (MainActivity.val == 1){
@@ -124,6 +130,7 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
                 String quiz = jObject.getString("quiz_name");
                 String question = (String) jObject.get("questions");
                 questionTV.setText(question);
+                String correctChoice = jObject.getString("choices");
                 Scanner json = new Scanner(jObject.get("choices").toString());
                 json.useDelimiter(",");
                 String[] jsonArray = new String[4];
@@ -147,18 +154,37 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
             e.printStackTrace();
         }
 
+    }
 
+    public void finishQuiz(){
+        String passOrFail;
+        if (tally > totalQuestions*0.5){
+            passOrFail = "You have passed.";
+        }
+        else{
+            passOrFail = "You have failed.";
+        }
 
-                   //change to json!
+        new AlertDialog.Builder(this)
+                .setTitle(passOrFail)
+                .setMessage("Your score is " + tally + " out of " + totalQuestions);
+
 
     }
 
     @Override
     public void onClick(View v) {
+        
+
+
         Button clickedButton = (Button) v;
         if (clickedButton.getId()==R.id.submit_ans){
+            if (selectAnswer.equals(correctChoice)){
+                tally++;
+            }
             questionIndex++;
             quizMenu();
+
 
         }
         else{
