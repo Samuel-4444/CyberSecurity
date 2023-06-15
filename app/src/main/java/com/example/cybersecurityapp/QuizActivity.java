@@ -174,11 +174,7 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-
-        answer1.setBackgroundColor(Color.WHITE);
-        answer2.setBackgroundColor(Color.WHITE);
-        answer3.setBackgroundColor(Color.WHITE);
-        answer4.setBackgroundColor(Color.WHITE);
+        
 
 
         Button clickedButton = (Button) v;
