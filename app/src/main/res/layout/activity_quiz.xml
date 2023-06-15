@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_white"
+    android:background="#000836"
     android:padding="28dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".QuizActivity">
@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/questions"
         android:id="@+id/question_total"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:textSize="25dp"/>
 
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Question 1"
         android:id="@+id/question"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:textSize="40dp"
         android:textAlignment="center"

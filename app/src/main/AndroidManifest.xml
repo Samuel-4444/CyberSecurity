@@ -33,6 +33,9 @@
             android:name=".Accessibility"
             android:exported="true" />
         <activity
+            android:name=".QuizActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
