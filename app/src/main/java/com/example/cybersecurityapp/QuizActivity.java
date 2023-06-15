@@ -58,59 +58,6 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
     }
 
-//    void readFromJSON(){                            //method to read questions and answers from json
-//        Resources r = getResources();
-//        InputStream is = r.openRawResource(R.raw.quiz);
-//        Scanner scanner = new Scanner(is);
-//        String jString = scanner.useDelimiter("\\A").next();
-//        scanner.close();
-//        try {
-//            JSONArray jArray = new JSONArray(jString);
-//            for (int i = 0; i < jArray.length(); i++) {
-//                JSONObject jObject = jArray.getJSONObject(i);
-//                String quiz = jObject.getString("quiz_name");
-//                String question = jObject.getString("questions");
-//                // jObject -> String
-//                String jsonObjString = jObject.toString();
-//
-//
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        //InputStream
-//    }
-
-//    MainActivity.val will stores an int to decide which language file will be used
-//    void readFromJSON(){
-//
-//        //method to read questions and answers from json
-//        Resources r = getResources();
-//        InputStream is = r.openRawResource(R.raw.quiz);
-//        if (MainActivity.val == 1){
-//             is = r.openRawResource(R.raw.quizfr);
-//        } else if (MainActivity.val==2) {
-//            is = r.openRawResource(R.raw.quizes);
-//        }
-//        Scanner scanner = new Scanner(is);
-//        String jString = scanner.useDelimiter("\\A").next();
-//        scanner.close();
-//        try {
-//            JSONArray jArray = new JSONArray(jString);
-//            for (int i = 0; i < jArray.length(); i++) {
-//                JSONObject jObject = jArray.getJSONObject(i);
-//                String quiz = jObject.getString("quiz_name");
-//                String question = jObject.getString("questions");
-//                // jObject -> String
-//                String jsonObjString = jObject.toString();
-//
-//
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//        //InputStream
-//    }
 
     public void quizMenu(){
         if (questionIndex ==  totalQuestions){
@@ -180,9 +127,6 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        
-
-
         Button clickedButton = (Button) v;
         if (clickedButton.getId()==R.id.submit_ans){
             if (selectAnswer.equals(correctChoice)){
@@ -195,7 +139,12 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
         }
         else{
             selectAnswer = clickedButton.getText().toString();
+            answer1.setBackgroundColor(Color.parseColor("#FF03DAC5"));
+            answer2.setBackgroundColor(Color.parseColor("#FF03DAC5"));
+            answer3.setBackgroundColor(Color.parseColor("#FF03DAC5"));
+            answer4.setBackgroundColor(Color.parseColor("#FF03DAC5"));
             clickedButton.setBackgroundColor(Color.MAGENTA);
+
         }
     }
 }
