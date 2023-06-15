@@ -1,15 +1,14 @@
 package com.example.cybersecurityapp;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.viewpager2.widget.ViewPager2;
@@ -17,6 +16,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.cybersecurityapp.databinding.ActivityMenuBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
 
 import java.util.Locale;
 
@@ -35,21 +35,6 @@ public class MenuActivity extends AppCompatActivity {
         MenuPagerAdapter menuPagerAdapter = new MenuPagerAdapter(this);
         viewPager2.setAdapter(menuPagerAdapter);
 
-        // binding = ActivityMenuBinding.inflate(getLayoutInflater());
-        // setContentView(binding.getRoot());
-        //
-        // BottomNavigationView navView = findViewById(R.id.nav_view);
-        // // Passing each menu ID as a set of Ids because each
-        // // menu should be considered as top level destinations.
-        // AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-        // R.id.navigation_home, R.id.navigation_dashboard,
-        // R.id.navigation_notifications)
-        // .build();
-        // NavController navController = Navigation.findNavController(this,
-        // R.id.nav_host_fragment_activity_menu);
-        // NavigationUI.setupActionBarWithNavController(this, navController,
-        // appBarConfiguration);
-        // NavigationUI.setupWithNavController(binding.navView, navController);
         // NavBar Init
         BottomNavigationView bNavView = findViewById(R.id.menu_nav_view);
         bNavView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -64,17 +49,14 @@ public class MenuActivity extends AppCompatActivity {
                 return true;
             }
         });
+
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 bNavView.getMenu().getItem(position).setChecked(true);
-
             }
         });
-
-
-
     }
 
     public void darkMethod(MenuItem item) {

@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    <item-->
-<!--        android:id="@+id/navigation_profile"-->
-<!--        android:icon="@drawable/baseline_person_24"-->
-<!--        android:title="@string/title_Profile" />-->
+    <!--    <item-->
+    <!--        android:id="@+id/navigation_profile"-->
+    <!--        android:icon="@drawable/baseline_person_24"-->
+    <!--        android:title="@string/title_Profile" />-->
 
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/dark"
-        android:icon="@drawable/baseline_dark_mode_24"
-        android:title="@string/descriptionDark"
-        android:onClick="darkMethod"
-        />
-    <item
-        android:id="@+id/lang"
+        android:id="@+id/nav_accessibility"
         android:icon="@drawable/baseline_language_24"
-        android:title="@string/langs"
-        android:onClick="showDialog"
-
-        />
-
-
-
-
-
+        android:title="Accessibility" />
 </menu>
