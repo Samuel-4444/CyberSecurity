@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +55,20 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
             public void onClick(View v) {
                 Intent intent = new Intent(QuizActivity.this,MenuActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        FloatingActionButton speakButton = findViewById(R.id.speak_button);
+        speakButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TTS tts = new TTS(getApplicationContext());
+                tts.speakText(totalQuestionsTV);
+                tts.speakText(questionTV);
+                tts.speakText(answer1);
+                tts.speakText(answer2);
+                tts.speakText(answer3);
+                tts.speakText(answer4);
             }
         });
 

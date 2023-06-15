@@ -43,7 +43,7 @@ public class LearningNoteFragment extends Fragment {
         speakButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TTS tts = new TTS(this);
+                TTS tts = new TTS(getContext());
                 tts.speakText(ln_text_topic);
                 tts.speakText(ln_text_note);
             }
