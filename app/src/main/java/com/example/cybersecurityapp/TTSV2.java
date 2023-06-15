@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Locale;
 
 public class TTSV2 extends AppCompatActivity implements TextToSpeech.OnInitListener {
-    private TextToSpeech tts;
+    TextToSpeech tts;
     private TextView textView;
 
     @Override
@@ -25,19 +25,19 @@ public class TTSV2 extends AppCompatActivity implements TextToSpeech.OnInitListe
 
         tts = new TextToSpeech(this, this);
 
-        englishButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (MainActivity.val == 0){
-                    tts.setLanguage(Locale.ENGLISH);
-                } else if (MainActivity.val == 1) {
-                    tts.setLanguage(Locale.FRENCH);
-                }else if (MainActivity.val == 2) {
-                    tts.setLanguage(new Locale("es"));
-                }
-                speakOut();
-            }
-        });
+//        englishButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                if (MainActivity.val == 0){
+//                    tts.setLanguage(Locale.ENGLISH);
+////                } else if (MainActivity.val == 1) {
+////                    tts.setLanguage(Locale.FRENCH);
+////                }else if (MainActivity.val == 2) {
+////                    tts.setLanguage(new Locale("es"));
+////                }
+//                speakOut();
+//            }
+//        });
 
 
 
@@ -57,9 +57,9 @@ public class TTSV2 extends AppCompatActivity implements TextToSpeech.OnInitListe
         }
     }
 
-    private void speakOut() {
-        String text = "Hello world KO";
-        tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    void speakOut(String value) {
+//        String text = ;
+        tts.speak(value, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     @Override
