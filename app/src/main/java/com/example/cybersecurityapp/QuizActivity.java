@@ -26,7 +26,7 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
     Button answer1, answer2, answer3, answer4, submit;
     int tally=0, totalQuestions = 0, questionIndex = 0;             //define variables
-    String selectAnswer = "";
+    String selectAnswer = "", correctChoice;
 
 
     protected void onCreate(Bundle savedInstanceState){
@@ -124,6 +124,7 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
                 String quiz = jObject.getString("quiz_name");
                 String question = (String) jObject.get("questions");
                 questionTV.setText(question);
+                String correctChoice = jObject.getString("choices");
                 Scanner json = new Scanner(jObject.get("choices").toString());
                 json.useDelimiter(",");
                 String[] jsonArray = new String[4];
@@ -151,10 +152,20 @@ public class QuizActivity extends AppCompatActivity  implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+
+        answer1.setBackgroundColor(Color.WHITE);
+        answer2.setBackgroundColor(Color.WHITE);
+        answer3.setBackgroundColor(Color.WHITE);
+        answer4.setBackgroundColor(Color.WHITE);
+
+
         Button clickedButton = (Button) v;
         if (clickedButton.getId()==R.id.submit_ans){
             questionIndex++;
             quizMenu();
+            if (selectAnswer.equals(correctChoice)){
+                tally++;
+            }
 
         }
         else{
