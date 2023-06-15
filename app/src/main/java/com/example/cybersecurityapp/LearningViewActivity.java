@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class LearningViewActivity extends AppCompatActivity {
     LearningPagerAdapter learningPagerAdapter;
@@ -22,5 +23,10 @@ public class LearningViewActivity extends AppCompatActivity {
         learningPagerAdapter = new LearningPagerAdapter(this, topic, jsonObj);
 
         viewPager2.setAdapter(learningPagerAdapter);
+    }
+
+    public void backButton(View v){
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
     }
 }
