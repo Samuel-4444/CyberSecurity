@@ -14,4 +14,22 @@
         android:id="@+id/nav_accessibility"
         android:icon="@drawable/baseline_language_24"
         android:title="Accessibility" />
+
+
+<!--    There's only 2 accessibility so no point in making a new page for it-->
+
+    <item
+        android:id="@+id/dark"
+        android:icon="@drawable/baseline_dark_mode_24"
+        android:title="@string/descriptionDark"
+        android:onClick="darkMethod"
+        />
+    <item
+        android:id="@+id/lang"
+        android:icon="@drawable/baseline_language_24"
+        android:title="@string/langs"
+        android:onClick="showDialog"
+
+        />
+
 </menu>

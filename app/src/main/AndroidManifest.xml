@@ -27,11 +27,12 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".TTSV2"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
-        <activity
-            android:name=".Accessibility"
-            android:exported="true" />
+
         <activity
             android:name=".QuizActivity"
             android:exported="true" />
